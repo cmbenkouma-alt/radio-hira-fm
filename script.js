@@ -4,29 +4,50 @@ const playBtn = document.querySelector('#playBtn');
 const player = document.querySelector('#radioPlayer');
 const status = document.querySelector('#playerStatus');
 
+const RADIO_PAGE_URL = 'https://radiohirafm.radio12345.com/';
+// À remplacer dès que le fournisseur donne l'URL directe du flux audio.
+const RADIO_STREAM_URL = '';
+
 document.querySelector('#year').textContent = new Date().getFullYear();
 menuToggle?.addEventListener('click', () => nav.classList.toggle('open'));
 nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-
-/*
- * RADIO HIRA FM — configuration du direct
- *
- * RADIO_STREAM_URL doit être l'adresse AUDIO réelle du flux (MP3/AAC/HLS).
- * Exemple : https://serveur.exemple.tld/live.mp3
- *
- * Une page web d'écoute (https://...) n'est PAS elle-même un flux audio.
- * Si le fournisseur ne donne qu'une page d'écoute, son lecteur doit fournir
- * soit une URL de stream, soit un code d'intégration compatible.
- */
-const RADIO_STREAM_URL = '';
 
 function setStatus(message) {
   if (status) status.textContent = message;
 }
 
+function openOfficialPlayerInsideSite() {
+  const card = document.querySelector('.live-card');
+  if (!card || card.querySelector('.radio-frame')) return;
+
+  const frame = document.createElement('iframe');
+  frame.className = 'radio-frame';
+  frame.title = 'Lecteur officiel Radio Hira FM';
+  frame.src = RADIO_PAGE_URL;
+  frame.loading = 'lazy';
+  frame.allow = 'autoplay; encrypted-media';
+  frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+  player?.remove();
+  playBtn?.remove();
+  status?.remove();
+  card.appendChild(frame);
+
+  const fallback = document.createElement('a');
+  fallback.className = 'official-link';
+  fallback.href = RADIO_PAGE_URL;
+  fallback.target = '_blank';
+  fallback.rel = 'noopener';
+  fallback.textContent = 'Ouvrir le lecteur officiel · فتح المشغل الرسمي';
+  card.appendChild(fallback);
+}
+
 playBtn?.addEventListener('click', async () => {
   if (!RADIO_STREAM_URL) {
-    setStatus("Le flux audio réel doit encore être relié au lecteur.");
+    // Radio12345 fournit une page d'écoute. On l'intègre dans le bloc Direct
+    // plutôt que d'inventer une URL de stream qui pourrait être incorrecte.
+    setStatus('Connexion au lecteur officiel Radio Hira FM…');
+    openOfficialPlayerInsideSite();
     return;
   }
 
