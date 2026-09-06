@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Radio Hira FM — La radio islamique, la voix des anges tout simplement.">
+  <title>Radio Hira FM | La voix des anges</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Radio Hira FM accueil">
+        <span class="brand-mark">☪</span>
+        <span><strong>RADIO HIRA FM</strong><small>إذاعة حراء</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav-links">
+        <a href="#accueil">Accueil<br><span>الرئيسية</span></a>
+        <a href="#programmes">Programmes<br><span>البرامج</span></a>
+        <a href="#videos">Vidéos<br><span>الفيديوهات</span></a>
+        <a href="#audios">Audios<br><span>الصوتيات</span></a>
+        <a href="#contact">Contact<br><span>اتصل بنا</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="accueil">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">RADIO HIRA FM · إذاعة حراء</div>
+          <h1>La voix des anges<br><span>صوت الملائكة</span></h1>
+          <p>Une radio islamique au service de la foi, du savoir et de la communauté.</p>
+          <p class="arabic">إذاعة إسلامية لخدمة الإيمان والعلم والمجتمع</p>
+          <a class="btn" href="#direct">Écouter en direct · استمع مباشرة</a>
+        </div>
+        <div class="live-card" id="direct">
+          <div class="live-top"><span class="pulse"></span> EN DIRECT · مباشر</div>
+          <div class="radio-icon">♫</div>
+          <h2>Radio Hira FM</h2>
+          <p>Votre radio, partout avec vous.</p>
+          <p class="arabic">إذاعتكم معكم أينما كنتم</p>
+          <button class="play-btn" id="playBtn" type="button" aria-label="Lancer la radio">▶</button>
+          <audio id="radioPlayer" preload="none"></audio>
+          <small id="playerStatus">Ajoutez votre flux audio dans script.js</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programmes">
+      <div class="container">
+        <div class="section-heading"><div><span>À L'ANTENNE</span><h2>Programmes · البرامج</h2></div><p>Des contenus pour nourrir le cœur et l'esprit.</p></div>
+        <div class="cards three">
+          <article class="info-card"><span>01</span><h3>Coran & spiritualité</h3><p>Écoute, récitations et rappels.</p><p class="arabic">القرآن والروحانيات</p></article>
+          <article class="info-card"><span>02</span><h3>Enseignement islamique</h3><p>Conférences, conseils et savoir.</p><p class="arabic">التعليم الإسلامي</p></article>
+          <article class="info-card"><span>03</span><h3>Vie & communauté</h3><p>Actualités et échanges avec les auditeurs.</p><p class="arabic">الحياة والمجتمع</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="videos">
+      <div class="container">
+        <div class="section-heading"><div><span>À VOIR</span><h2>Vidéos · الفيديوهات</h2></div><p>Retrouvez nos contenus vidéo.</p></div>
+        <div class="media-placeholder"><div class="youtube">▶</div><h3>Votre chaîne YouTube</h3><p>Les vidéos seront intégrées ici.</p><button class="outline-btn" type="button">Voir les vidéos · شاهد الفيديوهات</button></div>
+      </div>
+    </section>
+
+    <section class="section" id="audios">
+      <div class="container">
+        <div class="section-heading"><div><span>À ÉCOUTER</span><h2>Audios · الصوتيات</h2></div><p>Podcasts, conférences et émissions.</p></div>
+        <div class="audio-list">
+          <div class="audio-item"><div class="mini-play">▶</div><div><strong>Conférence islamique</strong><small>Épisode 01 · الحلقة الأولى</small></div><span>02:35</span></div>
+          <div class="audio-item"><div class="mini-play">▶</div><div><strong>Rappel du jour</strong><small>Spiritualité · التذكير اليومي</small></div><span>08:20</span></div>
+          <div class="audio-item"><div class="mini-play">▶</div><div><strong>Paroles de sagesse</strong><small>Émission · برنامج</small></div><span>15:10</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div><span>NOUS CONTACTER</span><h2>Radio Hira FM<br><span>إذاعة حراء</span></h2><p>Une présence médiatique au service de la communauté musulmane.</p></div>
+        <div class="contact-box"><p><strong>📍 Localisation</strong><br>Votre adresse sera ajoutée ici.</p><p><strong>✉ Contact</strong><br>Votre e-mail sera ajouté ici.</p><p><strong>📱 Réseaux sociaux</strong><br>Facebook · YouTube · WhatsApp</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><strong>RADIO HIRA FM</strong><span>La voix des anges · صوت الملائكة</span></div><p>© <span id="year"></span> Radio Hira FM. Tous droits réservés.</p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
