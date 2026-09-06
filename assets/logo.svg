@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-label="Radio Hira FM — La lumière des Esprits">
+<defs>
+  <linearGradient id="sky" x1="0" x2="1"><stop stop-color="#eaf7ff"/><stop offset="1" stop-color="#fbe8f2"/></linearGradient>
+  <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#f4c43b"/><stop offset="1" stop-color="#d9a52e"/></linearGradient>
+</defs>
+<rect x="18" y="18" width="964" height="524" rx="22" fill="url(#sky)" stroke="#111" stroke-width="7"/>
+<path d="M665 58 A105 105 0 0 1 750 145" fill="none" stroke="#18a34a" stroke-width="26" stroke-linecap="round"/>
+<path d="M674 105 A73 73 0 0 1 731 161" fill="none" stroke="#f4c43b" stroke-width="24" stroke-linecap="round"/>
+<path d="M685 150 A42 42 0 0 1 716 181" fill="none" stroke="#e62f4f" stroke-width="22" stroke-linecap="round"/>
+<rect x="52" y="72" width="650" height="275" fill="none" stroke="#111" stroke-width="6"/>
+<text x="82" y="205" font-family="Arial, Helvetica, sans-serif" font-size="83" font-weight="800" letter-spacing="2" fill="#fff" stroke="#111" stroke-width="5" paint-order="stroke">RADIO HIRA</text>
+<circle cx="699" cy="196" r="42" fill="#8e163f"/>
+<text x="699" y="211" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#fff">fm</text>
+<text x="78" y="302" font-family="Georgia, serif" font-size="50" font-style="italic" fill="#8e163f">La lumière des Esprits</text>
+<circle cx="825" cy="220" r="148" fill="#143f70" stroke="#fff" stroke-width="9"/>
+<path d="M790 148 C790 126 806 112 825 112 C844 112 860 126 860 148 L860 259 C860 281 844 295 825 295 C806 295 790 281 790 259 Z" fill="#cbd5df" stroke="#fff" stroke-width="5"/>
+<path d="M775 245 C775 285 796 316 825 316 C854 316 875 285 875 245" fill="none" stroke="#fff" stroke-width="10"/>
+<path d="M825 316 L825 348 M793 348 L857 348" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+<path d="M350 430 L440 430 L468 458 L505 405 L543 470 L584 422 L620 446 L655 390 L692 500 L730 425 L770 463 L814 430" fill="none" stroke="#111" stroke-width="8" stroke-linejoin="round"/>
+</svg>
