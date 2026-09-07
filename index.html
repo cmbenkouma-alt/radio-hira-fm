@@ -62,6 +62,19 @@
     @media(max-width:480px){.hero-tafsir .hero-poster-bg{background-size:contain;background-position:center top}.hero-tafsir-copy{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.82))}}
     @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.hero-poster-bg{transform:none}}
   </style>
+
+<style>
+  /* HERO — IMAGE ONLY */
+  .hero-image-only,.hero-image-only .hero-slides{min-height:clamp(520px,72vh,760px);height:clamp(520px,72vh,760px);background:#031f18;overflow:hidden}
+  .hero-image-only .hero-slide{display:flex;align-items:center;justify-content:center;padding:0;transform:translateX(6%);background:#031f18}
+  .hero-image-only .hero-slide.is-active{transform:translateX(0)}
+  .hero-image-only .hero-slide::before{display:none}
+  .hero-image-only .hero-only-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:saturate(1.04);transition:transform .85s cubic-bezier(.22,.61,.36,1)}
+  .hero-image-only .hero-slide:hover .hero-only-image{transform:scale(1.01)}
+  @media(max-width:800px){.hero-image-only,.hero-image-only .hero-slides{min-height:570px;height:570px}.hero-image-only .hero-only-image{object-fit:contain;object-position:center}}
+  @media(max-width:480px){.hero-image-only,.hero-image-only .hero-slides{min-height:520px;height:520px}}
+  @media(prefers-reduced-motion:reduce){.hero-image-only .hero-only-image{transition:none}}
+</style>
 </head>
 <body>
   <div class="top-pattern" aria-hidden="true">۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞</div>
@@ -81,52 +94,13 @@
   </header>
 
   <main id="accueil">
-    <section class="hero hero-slider" id="heroSlider" aria-label="Présentation Radio Hira FM">
-      <div class="hero-slides">
-        <article class="hero-slide is-active" data-slide="0">
-          <div class="hero-poster-bg" style="background:radial-gradient(circle at 70% 40%,rgba(244,196,59,.22),transparent 25%),linear-gradient(135deg,#031f18,#075b45 58%,#012d24)"></div>
-          <div class="hero-slide-content">
-            <div class="hero-kicker"><span>۞</span> RADIO HIRA FM · إذاعة هيرا إف إم <span>۞</span></div>
-            <h1>La lumière des Esprits <span>نور الأرواح</span></h1>
-            <p>Une radio islamique au service de la foi, du savoir et de la communauté.</p>
-            <p class="arabic">إذاعة إسلامية في خدمة الإيمان والعلم والمجتمع</p>
-            <div class="hero-slide-actions"><a class="hero-slide-btn gold" href="#radio">🔴 Écouter en direct</a><a class="hero-slide-btn light" href="#videos">Découvrir nos contenus</a></div>
-            <span class="hero-signature">SIGNATURE VISUELLE · RADIO HIRA FM</span>
-          </div>
-        </article>
-
-        <a class="hero-slide hero-slide-info" data-slide="1" href="#infos" aria-label="Voir les informations de Radio Hira FM">
-          <div class="hero-info-poster"></div>
-          <div class="hero-slide-content">
-            <div class="hero-kicker"><span>✦</span> NOUVELLE CATÉGORIE · INFOS <span>✦</span></div>
-            <h1>Les informations <span>معلومات الإذاعة</span></h1>
-            <p>Retrouvez les annonces, programmes, rendez-vous et informations importantes de Radio Hira FM.</p>
-            <p class="arabic">تابعوا هنا إعلانات وبرامج ومعلومات إذاعة هيرا إف إم المهمة</p>
-            <div class="hero-slide-actions"><span class="hero-slide-btn gold">Consulter les infos →</span></div>
-            <span class="hero-signature">SIGNATURE VISUELLE · RADIO HIRA FM</span>
-            <div class="hero-info-panel"><div class="info-icon">۞</div><h2>INFOS RADIO HIRA</h2><p>Un espace dédié aux actualités, annonces et rendez-vous de votre radio.</p><span class="hero-tasir-note">MORIBABOUGOU · MALI</span></div>
-          </div>
-        </a>
-
-        <a class="hero-slide hero-tafsir" data-slide="2" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer" aria-label="Écouter le TAFSIR de Oustaz Sidi Toure sur la playlist YouTube">
-          <div class="hero-poster-bg"></div>
-          <div class="hero-slide-content">
-            <div class="hero-tafsir-copy">
-              <div class="hero-kicker"><span>☪</span> PROGRAMME SPIRITUEL · يوتيوب <span>☪</span></div>
-              <h1>Écoutez le <span>TAFSIR</span></h1>
-              <p><strong>Oustaz Sidi Touré</strong> vous accompagne dans l'écoute et la compréhension du Coran.</p>
-              <p class="arabic">استمعوا إلى تفسير الأستاذ سيدي توري</p>
-              <div class="hero-slide-actions"><span class="hero-slide-btn gold">▶ Écouter maintenant</span></div>
-              <span class="hero-tasir-note">PLAYLIST YOUTUBE · TAFSIR DU CORAN</span>
-            </div>
-            <span class="hero-signature">AFFICHE · SIGNATURE HIRA FM</span>
-          </div>
-        </a>
-      </div>
-      <button class="hero-arrow hero-prev" type="button" aria-label="Slide précédente">‹</button>
-      <button class="hero-arrow hero-next" type="button" aria-label="Slide suivante">›</button>
-      <div class="hero-slider-nav" role="tablist" aria-label="Slides du hero"><button class="hero-dot is-active" type="button" aria-label="Slide 1" aria-selected="true"></button><button class="hero-dot" type="button" aria-label="Slide 2" aria-selected="false"></button><button class="hero-dot" type="button" aria-label="Slide 3" aria-selected="false"></button></div>
-    </section>
+    <section class="hero hero-slider hero-image-only" id="heroSlider" aria-label="Radio Hira FM">
+  <div class="hero-slides">
+    <a class="hero-slide hero-tafsir is-active" data-slide="0" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer" aria-label="Tafsir de Oustaz Sidi Toure">
+      <img class="hero-only-image" src="./assets/tafsi%E2%80%8Br-oustaz-sidi-toure.png?v=20260907" alt="Tafsir de Oustaz Sidi Toure">
+    </a>
+  </div>
+</section>
 
     <section class="section live-section" id="radio">
       <div class="container">
