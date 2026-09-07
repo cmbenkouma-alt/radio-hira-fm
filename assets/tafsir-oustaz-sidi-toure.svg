@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">TAFSIR DE OUSTAZ SIDI TOURE — Radio Hira FM</title>
+  <desc id="desc">Affiche islamique Radio Hira FM avec Coran, chapelet et invitation à écouter le Tafsir.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#031f18"/><stop offset=".55" stop-color="#075b45"/><stop offset="1" stop-color="#012d24"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1a8"/><stop offset=".35" stop-color="#f4c43b"/><stop offset="1" stop-color="#b87905"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-opacity=".45"/></filter>
+    <pattern id="geo" width="70" height="70" patternUnits="userSpaceOnUse"><path d="M35 4 47 23 66 35 47 47 35 66 23 47 4 35 23 23Z" fill="none" stroke="#d9a928" stroke-opacity=".12" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1200" height="700" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="700" rx="34" fill="url(#geo)"/>
+  <path d="M34 90 Q600 10 1166 90 M34 610 Q600 690 1166 610" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".8"/>
+  <circle cx="88" cy="82" r="48" fill="#06291f" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M73 105V78a15 15 0 0 1 30 0v27M68 105h40M79 68h18" fill="none" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M89 51a16 16 0 1 0 13 23 18 18 0 1 1-13-23Z" fill="url(#gold)"/>
+  <text x="160" y="72" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800" letter-spacing="3">RADIO HIRA FM</text>
+  <text x="162" y="104" fill="#f4c43b" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">LA VOIX DE LA FOI</text>
+  <text x="600" y="166" text-anchor="middle" fill="#f4c43b" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="6">ÉCOUTEZ LE</text>
+  <text x="600" y="255" text-anchor="middle" fill="url(#gold)" stroke="#1b281f" stroke-width="10" paint-order="stroke" filter="url(#shadow)" font-family="Inter,Arial,sans-serif" font-size="100" font-weight="900" letter-spacing="4">TAFSIR</text>
+  <text x="600" y="305" text-anchor="middle" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="5">DE OUSTAZ SIDI TOURE</text>
+  <path d="M230 332H970" stroke="url(#gold)" stroke-width="2"/><circle cx="600" cy="332" r="8" fill="#f4c43b"/>
+  <!-- stylised teacher silhouette -->
+  <ellipse cx="850" cy="475" rx="155" ry="165" fill="#031a15" stroke="#d9a928" stroke-width="3" opacity=".95"/>
+  <circle cx="850" cy="414" r="62" fill="#8a5a3b"/>
+  <path d="M792 401q58-74 116 0v25H792Z" fill="#552f2a"/>
+  <path d="M755 540q95-85 190 0v70H755Z" fill="#d6c09e"/>
+  <path d="M790 465q60 35 120 0" fill="none" stroke="#b08c63" stroke-width="5" opacity=".7"/>
+  <!-- Quran -->
+  <g transform="translate(410 410) rotate(-7)" filter="url(#shadow)">
+    <path d="M0 100 145 55 290 100v150l-145 45L0 250Z" fill="#103b2e" stroke="url(#gold)" stroke-width="6"/>
+    <path d="M145 55v195" stroke="#e6bd45" stroke-width="3"/>
+    <path d="M34 112 145 78l111 34v111l-111 34L34 223Z" fill="none" stroke="#e6bd45" stroke-width="3"/>
+    <circle cx="145" cy="152" r="38" fill="none" stroke="#e6bd45" stroke-width="4"/>
+    <text x="145" y="163" text-anchor="middle" fill="#e6bd45" font-family="Amiri,serif" font-size="27">القرآن</text>
+  </g>
+  <!-- prayer beads -->
+  <path d="M360 585 C450 650 610 645 735 585 C795 556 850 568 900 610" fill="none" stroke="#9a5a25" stroke-width="9" opacity=".55"/>
+  <g fill="#9a5a25" stroke="#e1a52f" stroke-width="2">
+    <circle cx="382" cy="600" r="13"/><circle cx="414" cy="619" r="13"/><circle cx="450" cy="632" r="13"/><circle cx="488" cy="638" r="13"/><circle cx="528" cy="640" r="13"/><circle cx="568" cy="638" r="13"/><circle cx="608" cy="631" r="13"/><circle cx="648" cy="620" r="13"/><circle cx="688" cy="605" r="13"/><circle cx="727" cy="590" r="13"/><circle cx="765" cy="580" r="13"/><circle cx="804" cy="581" r="13"/><circle cx="842" cy="595" r="13"/><circle cx="875" cy="614" r="13"/>
+  </g>
+  <g transform="translate(75 400)">
+    <rect width="300" height="105" rx="22" fill="#041b16" stroke="url(#gold)" stroke-width="3"/>
+    <text x="150" y="38" text-anchor="middle" fill="#f4c43b" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" letter-spacing="2">LE CORAN</text>
+    <text x="150" y="70" text-anchor="middle" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="19">Une lumière pour la vie</text>
+    <text x="150" y="91" text-anchor="middle" fill="#d9e8e2" font-family="Amiri,serif" font-size="18">نور وهداية</text>
+  </g>
+  <g transform="translate(72 545)">
+    <rect width="360" height="74" rx="37" fill="#e51f2f" filter="url(#shadow)"/>
+    <circle cx="43" cy="37" r="25" fill="#fff"/><path d="M36 23 57 37 36 51Z" fill="#e51f2f"/>
+    <text x="78" y="33" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="900">ÉCOUTER MAINTENANT</text>
+    <text x="78" y="55" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600">SUR LA PLAYLIST YOUTUBE</text>
+  </g>
+  <text x="1045" y="625" text-anchor="middle" fill="#f4c43b" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="2">TAFSIR · RAPPELS · SAVOIR</text>
+  <text x="1045" y="651" text-anchor="middle" fill="#fff" font-family="Amiri,serif" font-size="24">العلم · الهداية · الإيمان</text>
+</svg>
