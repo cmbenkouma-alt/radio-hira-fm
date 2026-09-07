@@ -14,6 +14,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css?v=20260907">
   <link rel="stylesheet" href="./youtube.css?v=20260907">
+  <style>
+    /* HERO SLIDER — Radio Hira FM */
+    .hero-slider{position:relative;min-height:600px;overflow:hidden;background:linear-gradient(135deg,#031f18,#075b45 55%,#012d24);isolation:isolate}
+    .hero-slider:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(244,196,59,.18),transparent 32%),radial-gradient(circle at 85% 70%,rgba(255,255,255,.08),transparent 28%);pointer-events:none}
+    .hero-slides{position:relative;min-height:600px}
+    .hero-slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding:58px max(24px,calc((100% - 1160px)/2));opacity:0;visibility:hidden;transform:translateX(32px) scale(.985);transition:opacity .7s ease,transform .7s ease,visibility .7s ease;pointer-events:none;color:#fff;text-decoration:none}
+    .hero-slide.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+    .hero-slide-copy{max-width:650px;position:relative;z-index:2}
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;color:#f4c43b;font-size:14px;font-weight:800;letter-spacing:2px;margin-bottom:18px}
+    .hero-kicker span{font-size:20px}
+    .hero-slide h1{font-size:clamp(42px,5.3vw,78px);line-height:.98;margin:0 0 22px;font-weight:800;letter-spacing:-2px}
+    .hero-slide h1 span{display:block;color:#f4c43b;font-family:Amiri,serif;font-size:.62em;letter-spacing:0;margin-top:14px}
+    .hero-slide p{font-size:18px;line-height:1.7;color:#e9f5f0;max-width:610px;margin:0 0 12px}
+    .hero-slide .arabic{font-family:Amiri,serif;font-size:22px}
+    .hero-slide-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero-slide-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;border:1px solid rgba(255,255,255,.18);transition:transform .2s ease,box-shadow .2s ease}
+    .hero-slide-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .hero-slide-btn.gold{background:#f4c43b;color:#08281f}
+    .hero-slide-btn.light{background:rgba(255,255,255,.1);color:#fff;backdrop-filter:blur(8px)}
+    .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:430px}
+    .hero-visual img{width:min(100%,610px);max-height:470px;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35));border-radius:24px}
+    .hero-logo-visual{width:min(390px,72%);padding:28px;border-radius:36px;background:rgba(255,255,255,.07);border:1px solid rgba(244,196,59,.3);box-shadow:0 24px 70px rgba(0,0,0,.25);backdrop-filter:blur(8px)}
+    .hero-logo-visual img{max-height:350px;width:100%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+    .hero-info-card{padding:42px;border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(244,196,59,.32);box-shadow:0 24px 70px rgba(0,0,0,.25);backdrop-filter:blur(10px)}
+    .hero-info-card .info-icon{font-size:64px;color:#f4c43b;margin-bottom:15px}
+    .hero-info-card h2{margin:0 0 12px;font-size:34px}
+    .hero-info-card p{font-size:17px}
+    .hero-tasir-note{display:inline-block;margin-top:14px;padding:9px 13px;border:1px solid rgba(244,196,59,.35);border-radius:999px;color:#f4c43b;font-size:13px;font-weight:800;letter-spacing:1px}
+    .hero-slider-nav{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:10}
+    .hero-dot{width:10px;height:10px;border:0;border-radius:50%;background:rgba(255,255,255,.42);cursor:pointer;padding:0;transition:all .25s ease}
+    .hero-dot.is-active{width:30px;border-radius:999px;background:#f4c43b}
+    .hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:11;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.2);color:#fff;font-size:25px;cursor:pointer;backdrop-filter:blur(6px)}
+    .hero-arrow:hover{background:rgba(244,196,59,.9);color:#08281f}
+    .hero-prev{left:18px}.hero-next{right:18px}
+    .hero-slide-tasir .hero-slide-copy{order:1}.hero-slide-tasir .hero-visual{order:2}
+    .hero-slide-info .hero-slide-copy{max-width:600px}
+    @media(max-width:800px){.hero-slider,.hero-slides{min-height:690px}.hero-slide{grid-template-columns:1fr;gap:12px;padding:40px 42px 72px;text-align:center;align-content:center}.hero-slide-copy{margin:auto}.hero-slide h1{font-size:48px}.hero-slide p{font-size:16px;margin-left:auto;margin-right:auto}.hero-slide-actions{justify-content:center}.hero-visual{min-height:230px}.hero-visual img{max-height:250px}.hero-logo-visual{width:230px;padding:18px}.hero-info-card{padding:26px;max-width:500px;margin:auto}.hero-info-card .info-icon{font-size:46px}.hero-info-card h2{font-size:28px}.hero-prev{left:8px}.hero-next{right:8px}}
+    @media(max-width:480px){.hero-slider,.hero-slides{min-height:720px}.hero-slide{padding-left:34px;padding-right:34px}.hero-slide h1{font-size:39px}.hero-slide .arabic{font-size:19px}.hero-slide-btn{width:100%}.hero-visual{min-height:210px}.hero-visual img{max-height:220px}.hero-arrow{width:36px;height:36px;font-size:21px}.hero-kicker{font-size:11px;letter-spacing:1.2px}}
+    @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+  </style>
 </head>
 <body>
   <div class="top-pattern" aria-hidden="true">۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞</div>
@@ -33,22 +73,45 @@
   </header>
 
   <main id="accueil">
-    <section class="hero">
-      <div class="islamic-glow" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="kicker"><span>۞</span> RADIO HIRA FM · إذاعة هيرا إف إم <span>۞</span></div>
-          <h1>La lumière des Esprits <span>نور الأرواح</span></h1>
-          <p>Une radio islamique au service de la foi, du savoir et de la communauté.</p>
-          <p class="arabic">إذاعة إسلامية في خدمة الإيمان والعلم والمجتمع</p>
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="#radio">🔴 Écouter en direct <span>الاستماع مباشرة</span></a>
-            <a class="btn btn-light" href="#videos">Découvrir nos contenus <span>اكتشف محتوياتنا</span></a>
+    <section class="hero hero-slider" id="heroSlider" aria-label="Présentation Radio Hira FM">
+      <div class="hero-slides">
+        <article class="hero-slide is-active" data-slide="0">
+          <div class="hero-slide-copy">
+            <div class="hero-kicker"><span>۞</span> RADIO HIRA FM · إذاعة هيرا إف إم <span>۞</span></div>
+            <h1>La lumière des Esprits <span>نور الأرواح</span></h1>
+            <p>Une radio islamique au service de la foi, du savoir et de la communauté.</p>
+            <p class="arabic">إذاعة إسلامية في خدمة الإيمان والعلم والمجتمع</p>
+            <div class="hero-slide-actions"><a class="hero-slide-btn gold" href="#radio">🔴 Écouter en direct</a><a class="hero-slide-btn light" href="#videos">Découvrir nos contenus</a></div>
           </div>
-          <div class="location-pill">📍 Moribabougou · Mali <b>مورِيبابوغو · مالي</b></div>
-        </div>
-        <div class="hero-logo-card"><img src="./assets/logo.svg?v=20260907" alt="Logo officiel Radio Hira FM"><div class="hero-ornament">☪︎ &nbsp; بِسْمِ اللَّهِ &nbsp; ۞</div></div>
+          <div class="hero-visual"><div class="hero-logo-visual"><img src="./assets/logo.svg?v=20260907" alt="Logo officiel Radio Hira FM"><div class="hero-ornament">☪︎ &nbsp; بِسْمِ اللَّهِ &nbsp; ۞</div></div></div>
+        </article>
+
+        <a class="hero-slide hero-slide-info" data-slide="1" href="#infos" aria-label="Voir les informations de Radio Hira FM">
+          <div class="hero-slide-copy">
+            <div class="hero-kicker"><span>✦</span> NOUVELLE CATÉGORIE · INFOS <span>✦</span></div>
+            <h1>Les informations <span>معلومات الإذاعة</span></h1>
+            <p>Retrouvez dans cet espace les annonces, programmes, rendez-vous et informations importantes de Radio Hira FM.</p>
+            <p class="arabic">تابعوا هنا إعلانات وبرامج ومعلومات إذاعة هيرا إف إم المهمة</p>
+            <div class="hero-slide-actions"><span class="hero-slide-btn gold">Consulter les infos →</span></div>
+          </div>
+          <div class="hero-visual"><div class="hero-info-card"><div class="info-icon">۞</div><h2>INFOS RADIO HIRA</h2><p>Un nouvel espace dédié aux actualités et annonces de votre radio.</p><span class="hero-tasir-note">MORIBABOUGOU · MALI</span></div></div>
+        </a>
+
+        <a class="hero-slide hero-slide-tasir" data-slide="2" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer" aria-label="Écouter le TAFSIR de Oustaz Sidi Toure sur la playlist YouTube">
+          <div class="hero-slide-copy">
+            <div class="hero-kicker"><span>☪</span> PROGRAMME SPIRITUEL · يوتيوب <span>☪</span></div>
+            <h1>Écoutez le <span>TAFSIR</span></h1>
+            <p><strong>Oustaz Sidi Touré</strong> vous accompagne dans l'écoute et la compréhension du Coran.</p>
+            <p class="arabic">استمعوا إلى تفسير الأستاذ سيدي توري</p>
+            <div class="hero-slide-actions"><span class="hero-slide-btn gold">▶ Écouter maintenant</span></div>
+            <span class="hero-tasir-note">PLAYLIST YOUTUBE · TAFSIR DU CORAN</span>
+          </div>
+          <div class="hero-visual"><img src="./assets/tafsir-oustaz-sidi-toure.svg?v=20260907" alt="Affiche TAFSIR de Oustaz Sidi Toure — Radio Hira FM"></div>
+        </a>
       </div>
+      <button class="hero-arrow hero-prev" type="button" aria-label="Slide précédente">‹</button>
+      <button class="hero-arrow hero-next" type="button" aria-label="Slide suivante">›</button>
+      <div class="hero-slider-nav" role="tablist" aria-label="Slides du hero"><button class="hero-dot is-active" type="button" aria-label="Slide 1" aria-selected="true"></button><button class="hero-dot" type="button" aria-label="Slide 2" aria-selected="false"></button><button class="hero-dot" type="button" aria-label="Slide 3" aria-selected="false"></button></div>
     </section>
 
     <section class="section live-section" id="radio">
@@ -61,27 +124,11 @@
       </div>
     </section>
 
-    <section class="section intro-section" id="la-radio">
-      <div class="container two-col">
-        <div class="islamic-card emerald-card"><div class="card-symbol">☪</div><div class="section-kicker">NOTRE IDENTITÉ · هويتنا</div><h2>Une radio proche de sa communauté <span>إذاعة قريبة من مجتمعها</span></h2><p>Radio Hira FM est une webradio islamique située à Moribabougou. Elle partage des contenus audio, vidéo et des informations utiles pour rester proche de ses auditeurs.</p><p class="arabic">إذاعة هيرا إف إم هي إذاعة إسلامية تقع في موريبابوغو، وتقدم محتويات صوتية ومرئية ومعلومات مفيدة للتواصل مع مستمعيها.</p></div>
-        <div class="values-grid"><article class="value-card gold"><span>01</span><div>☾</div><h3>Foi & spiritualité</h3><p>الإيمان والروحانيات</p></article><article class="value-card blue"><span>02</span><div>◈</div><h3>Savoir & transmission</h3><p>العلم ونقل المعرفة</p></article><article class="value-card burgundy"><span>03</span><div>✦</div><h3>Communauté</h3><p>المجتمع</p></article><article class="value-card green"><span>04</span><div>♫</div><h3>Écoute & partage</h3><p>الاستماع والمشاركة</p></article></div>
-      </div>
-    </section>
+    <section class="section intro-section" id="la-radio"><div class="container two-col"><div class="islamic-card emerald-card"><div class="card-symbol">☪</div><div class="section-kicker">NOTRE IDENTITÉ · هويتنا</div><h2>Une radio proche de sa communauté <span>إذاعة قريبة من مجتمعها</span></h2><p>Radio Hira FM est une webradio islamique située à Moribabougou. Elle partage des contenus audio, vidéo et des informations utiles pour rester proche de ses auditeurs.</p><p class="arabic">إذاعة هيرا إف إم هي إذاعة إسلامية تقع في موريبابوغو، وتقدم محتويات صوتية ومرئية ومعلومات مفيدة للتواصل مع مستمعيها.</p></div><div class="values-grid"><article class="value-card gold"><span>01</span><div>☾</div><h3>Foi & spiritualité</h3><p>الإيمان والروحانيات</p></article><article class="value-card blue"><span>02</span><div>◈</div><h3>Savoir & transmission</h3><p>العلم ونقل المعرفة</p></article><article class="value-card burgundy"><span>03</span><div>✦</div><h3>Communauté</h3><p>المجتمع</p></article><article class="value-card green"><span>04</span><div>♫</div><h3>Écoute & partage</h3><p>الاستماع والمشاركة</p></article></div></div></section>
 
-    <section class="section youtube-section" id="videos">
-      <div class="container">
-        <div class="section-heading center"><div class="section-kicker">PLAYLIST YOUTUBE · قائمة تشغيل يوتيوب</div><h2>Nos vidéos <span>فيديوهاتنا</span></h2><p>Regardez directement la playlist YouTube officielle de Radio Hira FM sur le site.</p></div>
-        <div class="youtube-shell">
-          <div class="youtube-player-card"><div class="youtube-player-wrap"><iframe title="Playlist YouTube Radio Hira FM" src="https://www.youtube.com/embed/videoseries?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
-          <aside class="youtube-info"><div class="youtube-brand"><i></i> YOUTUBE · يوتيوب</div><h3>Playlist Radio Hira FM <span>قائمة تشغيل راديو هيرا إف إم</span></h3><p>Retrouvez ici les vidéos de la playlist que vous avez fournie. Les nouvelles vidéos ajoutées à cette playlist pourront apparaître automatiquement dans le lecteur.</p><p class="arabic">تابعوا هنا فيديوهات قائمة التشغيل التي قدمتموها، ويمكن أن تظهر الفيديوهات الجديدة المضافة إليها تلقائياً.</p><div class="youtube-actions"><a class="youtube-btn" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer">▶ Ouvrir la playlist · فتح القائمة</a><a class="youtube-btn secondary" href="https://youtube.com/@siditouretv8694" target="_blank" rel="noopener noreferrer">Chaîne · القناة</a></div><div class="youtube-fallback">Si YouTube bloque l'intégration, utilisez <a href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer">ce lien vers la playlist</a>.</div></aside>
-        </div>
-        <div class="youtube-label">PLAYLIST OFFICIELLE · قائمة التشغيل الرسمية</div><p class="youtube-note">Playlist intégrée : PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM.</p>
-      </div>
-    </section>
+    <section class="section youtube-section" id="videos"><div class="container"><div class="section-heading center"><div class="section-kicker">PLAYLIST YOUTUBE · قائمة تشغيل يوتيوب</div><h2>Nos vidéos <span>فيديوهاتنا</span></h2><p>Regardez directement la playlist YouTube officielle de Radio Hira FM sur le site.</p></div><div class="youtube-shell"><div class="youtube-player-card"><div class="youtube-player-wrap"><iframe title="Playlist YouTube Radio Hira FM" src="https://www.youtube.com/embed/videoseries?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div><aside class="youtube-info"><div class="youtube-brand"><i></i> YOUTUBE · يوتيوب</div><h3>Playlist Radio Hira FM <span>قائمة تشغيل راديو هيرا إف إم</span></h3><p>Retrouvez ici les vidéos de la playlist que vous avez fournie. Les nouvelles vidéos ajoutées à cette playlist pourront apparaître automatiquement dans le lecteur.</p><p class="arabic">تابعوا هنا فيديوهات قائمة التشغيل التي قدمتموها، ويمكن أن تظهر الفيديوهات الجديدة المضافة إليها تلقائياً.</p><div class="youtube-actions"><a class="youtube-btn" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer">▶ Ouvrir la playlist · فتح القائمة</a><a class="youtube-btn secondary" href="https://youtube.com/@siditouretv8694" target="_blank" rel="noopener noreferrer">Chaîne · القناة</a></div><div class="youtube-fallback">Si YouTube bloque l'intégration, utilisez <a href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer">ce lien vers la playlist</a>.</div></aside></div><div class="youtube-label">PLAYLIST OFFICIELLE · قائمة التشغيل الرسمية</div><p class="youtube-note">Playlist intégrée : PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM.</p></div></section>
 
-    <section class="section audio-section" id="audios">
-      <div class="container"><div class="section-heading"><div><div class="section-kicker">À ÉCOUTER · للاستماع</div><h2>Audios enregistrés <span>التسجيلات الصوتية</span></h2></div><p>Émissions, conférences et contenus audio publiés par la radio.</p></div><div class="audio-feature"><div class="audio-cover"><span>♫</span><small>HIRA FM</small></div><div class="audio-copy"><div class="audio-tag">AUDIO · صوتي</div><h3>Votre bibliothèque audio</h3><p>Les enregistrements seront ajoutés ici au fur et à mesure.</p><p class="arabic">ستتم إضافة التسجيلات الصوتية هنا تباعاً</p><div class="fake-wave" aria-hidden="true">▁▂▃▅▇▆▄▃▅▇▅▃▂▁▃▆▇▅▃▂</div></div><button class="circle-action" type="button" aria-label="Lecteur audio">▶</button></div></div>
-    </section>
+    <section class="section audio-section" id="audios"><div class="container"><div class="section-heading"><div><div class="section-kicker">À ÉCOUTER · للاستماع</div><h2>Audios enregistrés <span>التسجيلات الصوتية</span></h2></div><p>Émissions, conférences et contenus audio publiés par la radio.</p></div><div class="audio-feature"><div class="audio-cover"><span>♫</span><small>HIRA FM</small></div><div class="audio-copy"><div class="audio-tag">AUDIO · صوتي</div><h3>Votre bibliothèque audio</h3><p>Les enregistrements seront ajoutés ici au fur et à mesure.</p><p class="arabic">ستتم إضافة التسجيلات الصوتية هنا تباعاً</p><div class="fake-wave" aria-hidden="true">▁▂▃▅▇▆▄▃▅▇▅▃▂▁▃▆▇▅▃▂</div></div><button class="circle-action" type="button" aria-label="Lecteur audio">▶</button></div></div></section>
 
     <section class="section info-section" id="infos"><div class="container"><div class="section-heading center"><div class="section-kicker">À SAVOIR · معلومات</div><h2>Informations de la radio <span>معلومات الإذاعة</span></h2><p>Un espace pour publier les annonces et informations importantes de Radio Hira FM.</p></div><div class="notice-card"><div class="notice-icon">۞</div><div><small>RADIO HIRA FM · إذاعة هيرا إف إم</small><h3>Les informations importantes seront publiées ici.</h3><p class="arabic">ستنشر هنا المعلومات والإعلانات المهمة</p><p>Ce bloc pourra être alimenté depuis l'espace d'administration.</p></div></div></div></section>
 
@@ -91,5 +138,21 @@
   <footer><div class="container footer-main"><img src="./assets/logo.svg?v=20260907" alt="Radio Hira FM"><div><strong>RADIO HIRA FM</strong><span>La lumière des Esprits · نور الأرواح</span><small>Moribabougou · Mali</small></div><div class="footer-social">YouTube · WhatsApp · Facebook</div></div><div class="container footer-bottom"><span>© <b id="year"></b> Radio Hira FM</span><span>Français · العربية</span></div></footer>
   <script src="./script.js?v=20260907"></script>
   <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
+  <script>
+    (function(){
+      const root=document.getElementById('heroSlider'); if(!root) return;
+      const slides=[...root.querySelectorAll('.hero-slide')]; const dots=[...root.querySelectorAll('.hero-dot')];
+      const prev=root.querySelector('.hero-prev'), next=root.querySelector('.hero-next'); let index=0, timer=null;
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function show(i){index=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('is-active',n===index));dots.forEach((d,n)=>{d.classList.toggle('is-active',n===index);d.setAttribute('aria-selected',n===index?'true':'false')});}
+      function restart(){if(reduced)return;clearInterval(timer);timer=setInterval(()=>show(index+1),6500)}
+      dots.forEach((d,n)=>d.addEventListener('click',()=>{show(n);restart()}));
+      prev.addEventListener('click',()=>{show(index-1);restart()}); next.addEventListener('click',()=>{show(index+1);restart()});
+      root.addEventListener('mouseenter',()=>clearInterval(timer)); root.addEventListener('mouseleave',restart);
+      root.addEventListener('focusin',()=>clearInterval(timer)); root.addEventListener('focusout',e=>{if(!root.contains(e.relatedTarget))restart()});
+      let startX=0; root.addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX},{passive:true}); root.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-startX;if(Math.abs(dx)>45){show(index+(dx<0?1:-1));restart()}},{passive:true});
+      show(0);restart();
+    })();
+  </script>
 </body>
 </html>
