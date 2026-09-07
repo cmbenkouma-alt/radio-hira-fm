@@ -1,0 +1,55 @@
+name: Hero image only
+
+on:
+  push:
+    paths:
+      - '.github/workflows/hero-image-only.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Replace hero with image-only slider
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          hero = '''<section class="hero hero-slider hero-image-only" id="heroSlider" aria-label="Radio Hira FM">
+            <div class="hero-slides">
+              <a class="hero-slide hero-tafsir is-active" data-slide="0" href="https://www.youtube.com/playlist?list=PL4o2vNNIyN0BcF6HHaJQZWUXbQpR4cdVM" target="_blank" rel="noopener noreferrer" aria-label="Tafsir de Oustaz Sidi Toure">
+                <img class="hero-only-image" src="./assets/tafsi%E2%80%8Br-oustaz-sidi-toure.png?v=20260907" alt="Tafsir de Oustaz Sidi Toure">
+              </a>
+            </div>
+          </section>'''
+
+          pattern = r'<section class="hero hero-slider" id="heroSlider".*?</section>'
+          updated, count = re.subn(pattern, hero, html, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit('Hero section not found; no changes made.')
+
+          css = '''\n<style>\n  /* HERO — IMAGE ONLY */\n  .hero-image-only,.hero-image-only .hero-slides{min-height:clamp(520px,72vh,760px);height:clamp(520px,72vh,760px);background:#031f18;overflow:hidden}\n  .hero-image-only .hero-slide{display:flex;align-items:center;justify-content:center;padding:0;transform:translateX(6%);background:#031f18}\n  .hero-image-only .hero-slide.is-active{transform:translateX(0)}\n  .hero-image-only .hero-slide::before{display:none}\n  .hero-image-only .hero-only-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:saturate(1.04);transition:transform .85s cubic-bezier(.22,.61,.36,1)}\n  .hero-image-only .hero-slide:hover .hero-only-image{transform:scale(1.01)}\n  @media(max-width:800px){.hero-image-only,.hero-image-only .hero-slides{min-height:570px;height:570px}.hero-image-only .hero-only-image{object-fit:contain;object-position:center}}\n  @media(max-width:480px){.hero-image-only,.hero-image-only .hero-slides{min-height:520px;height:520px}}\n  @media(prefers-reduced-motion:reduce){.hero-image-only .hero-only-image{transition:none}}\n</style>\n'''
+
+          marker = '</head>'
+          if '/* HERO — IMAGE ONLY */' not in updated:
+              updated = updated.replace(marker, css + marker, 1)
+          path.write_text(updated, encoding='utf-8')
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "fix(hero): display only the full poster image"
+          git push
