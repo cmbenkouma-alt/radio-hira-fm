@@ -18,10 +18,11 @@
     /* HERO — FULL POSTER SLIDER / Radio Hira FM */
     .hero-slider{position:relative;min-height:clamp(520px,72vh,760px);overflow:hidden;background:#031f18;isolation:isolate}
     .hero-slides{position:relative;height:clamp(520px,72vh,760px);overflow:hidden}
-    .hero-slide{position:absolute;inset:0;display:flex;align-items:stretch;justify-content:center;opacity:0;visibility:hidden;transform:scale(1.025);transition:opacity .8s ease,transform 1.1s ease,visibility .8s ease;color:#fff;text-decoration:none;pointer-events:none;overflow:hidden}
-    .hero-slide.is-active{opacity:1;visibility:visible;transform:scale(1);pointer-events:auto}
+    .hero-slide{position:absolute;inset:0;display:flex;align-items:stretch;justify-content:center;opacity:0;visibility:hidden;transform:translateX(6%);transition:opacity .65s ease,transform .85s cubic-bezier(.22,.61,.36,1),visibility .65s ease;color:#fff;text-decoration:none;pointer-events:none;overflow:hidden}
+    .hero-slide.is-active{opacity:1;visibility:visible;transform:translateX(0);pointer-events:auto}
     .hero-slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,22,17,.88) 0%,rgba(2,22,17,.58) 42%,rgba(2,22,17,.18) 100%);z-index:1}
     .hero-poster-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.04);transform:scale(1.01)}
+    .hero-tafsir .hero-poster-bg{background-size:contain;background-position:center;background-repeat:no-repeat;filter:saturate(1.06) drop-shadow(0 18px 45px rgba(0,0,0,.28));transform:none}
     .hero-slide-content{position:relative;z-index:2;width:min(1160px,calc(100% - 96px));display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:54px 0 82px}
     .hero-signature{position:absolute;right:0;bottom:22px;z-index:4;padding:7px 12px;border:1px solid rgba(244,196,59,.42);border-radius:999px;background:rgba(0,0,0,.24);backdrop-filter:blur(8px);font-size:10px;letter-spacing:1.8px;font-weight:800;color:rgba(255,255,255,.82)}
     .hero-kicker{display:inline-flex;align-items:center;gap:9px;color:#f4c43b;font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:18px}
@@ -42,7 +43,7 @@
     .hero-info-panel h2{margin:0 0 12px;font-size:34px}
     .hero-info-panel p{font-size:16px}
     .hero-tasir-note{display:inline-block;margin-top:13px;padding:8px 12px;border:1px solid rgba(244,196,59,.35);border-radius:999px;color:#f4c43b;font-size:11px;font-weight:800;letter-spacing:1px}
-    .hero-tafsir::before{background:linear-gradient(90deg,rgba(1,17,13,.28),rgba(1,17,13,.05) 58%,rgba(1,17,13,.15))}
+    .hero-tafsir::before{background:linear-gradient(90deg,rgba(1,17,13,.08),rgba(1,17,13,.02) 55%,rgba(1,17,13,.10))}
     .hero-tafsir .hero-poster-bg{background-image:url('./assets/tafsi%E2%80%8Br-oustaz-sidi-toure.png?v=20260907');background-color:#0b3a2d}
     .hero-tafsir .hero-slide-content{justify-content:flex-end;padding-bottom:82px}
     .hero-tafsir-copy{padding:24px 28px;border-radius:24px;background:linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.18));border-left:4px solid #f4c43b;max-width:670px;backdrop-filter:blur(3px)}
@@ -57,6 +58,8 @@
     .hero-prev{left:18px}.hero-next{right:18px}
     @media(max-width:800px){.hero-slider,.hero-slides{min-height:600px;height:600px}.hero-slide::before{background:linear-gradient(180deg,rgba(2,22,17,.3),rgba(2,22,17,.82) 72%,rgba(2,22,17,.94))}.hero-slide-content{width:min(100% - 62px,700px);padding:35px 0 72px;justify-content:flex-end;align-items:center;text-align:center}.hero-slide h1{font-size:48px}.hero-slide p{font-size:16px;margin-left:auto;margin-right:auto}.hero-slide-actions{justify-content:center}.hero-signature{right:50%;transform:translateX(50%);bottom:47px;font-size:9px}.hero-info-panel{width:100%;margin:0;padding:28px}.hero-info-panel .info-icon{font-size:45px}.hero-info-panel h2{font-size:29px}.hero-info-panel p{font-size:15px}.hero-tafsir-copy{max-width:100%;padding:19px 18px}.hero-tafsir-copy h1{font-size:42px}.hero-tafsir-copy p{font-size:15px}.hero-prev{left:8px}.hero-next{right:8px}}
     @media(max-width:480px){.hero-slider,.hero-slides{min-height:570px;height:570px}.hero-slide-content{width:calc(100% - 54px);padding-bottom:70px}.hero-slide h1{font-size:39px;letter-spacing:-1.5px}.hero-slide .arabic{font-size:19px}.hero-slide-actions{width:100%}.hero-slide-btn{width:100%;padding:12px 16px}.hero-tafsir-copy h1{font-size:36px}.hero-tafsir-copy .hero-kicker{font-size:10px;letter-spacing:1px}.hero-arrow{width:36px;height:36px;font-size:22px}.hero-signature{bottom:45px}}
+    @media(max-width:800px){.hero-tafsir .hero-poster-bg{background-size:contain;background-position:center top}.hero-tafsir .hero-slide-content{padding-bottom:72px}}
+    @media(max-width:480px){.hero-tafsir .hero-poster-bg{background-size:contain;background-position:center top}.hero-tafsir-copy{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.82))}}
     @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.hero-poster-bg{transform:none}}
   </style>
 </head>
