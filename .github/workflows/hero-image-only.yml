@@ -53,3 +53,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "fix(hero): display only the full poster image"
           git push
+
+# Triggered update for the image-only Hero.
